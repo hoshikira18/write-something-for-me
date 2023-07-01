@@ -1,6 +1,6 @@
 import type { V2_MetaFunction } from "@remix-run/node";
 const { request, GraphQLClient } = require("graphql-request");
-
+import { useState, useEffect } from "react";
 const endpoint =
   "https://api-eu-west-2.hygraph.com/v2/cljhcjich0fx001ume05m1i44/master";
 
@@ -15,7 +15,9 @@ mutation MyMutation($post: String!) {
 
 // Function to create an asset
 async function createAsset() {
-  let content = document.querySelector("#comment").value;
+  let contentValue = document.querySelector("#comment");
+  let content = contentValue.value;
+
   try {
     // Create a new GraphQL client
     const graphQLClient = new GraphQLClient(endpoint);
@@ -67,16 +69,18 @@ export default function Index() {
             </div>
             <div className="flex items-center justify-between border-t px-3 py-2 dark:border-gray-600">
               <button
-                type="submit"
                 className="inline-flex items-center rounded-lg bg-blue-700 px-4 py-2.5 text-center text-xs font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900"
                 onClick={() => {
-                  createAsset()
-                    .then((asset) => {
-                      console.log("Created asset:", asset);
-                    })
-                    .catch((error) => {
-                      console.error("Error:", error);
-                    });
+                  let contentValue = document.querySelector("#comment").value;
+                  console.log(contentValue);
+
+                  // createAsset()
+                  //   .then((asset) => {
+                  //     console.log("Created asset:", asset);
+                  //   })
+                  //   .catch((error) => {
+                  //     console.error("Error:", error);
+                  //   });
                 }}
               >
                 Send me
