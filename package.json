@@ -32,5 +32,6 @@
   },
   "engines": {
     "node": ">=14.0.0"
-  }
+  },
+  "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
 }
