@@ -58,12 +58,12 @@ export default function Index() {
               <label for="comment" className="sr-only">
                 Your comment
               </label>
-              <input
+              <textarea
                 id="comment"
                 className="w-full border-0 bg-white px-0 text-sm text-gray-900 focus:outline-none focus:ring-0 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                 placeholder="Xin chào, viết điều gì đó cho tôi nhé...!"
                 required
-              ></input>
+              ></textarea>
             </div>
             <div className="flex items-center justify-between border-t px-3 py-2 dark:border-gray-600">
               <button
